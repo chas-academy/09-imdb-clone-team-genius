@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
-<body>
-    <h1>TEST</h1>
 
-    <p>@foreach()
-    
-    @endforeach</p>
-</body>
-</html>
+<body>
+    <h1>Movie View</h1>
+    @foreach($movies as $movie)
+    {{ dd($movie->directors) }}
+    @endforeach
