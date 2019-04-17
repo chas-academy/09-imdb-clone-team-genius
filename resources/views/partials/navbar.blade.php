@@ -2,7 +2,7 @@
 
   <div class="container-fluid d-flex justify-content-between">
     <a class="nav-link" href="/">
-        <img class="logo" width="100" src="{{ asset('assets/logo.svg') }}" />
+        <img class="logo" width="100" src="{{ asset('assets/logo.png') }}" />
     </a>
 
     <button class="navbar-toggler btn btn-outline-success mr-2 ml-auto nav-button" type="button" data-toggle="collapse" data-target="#featureContent"
