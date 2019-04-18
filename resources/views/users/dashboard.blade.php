@@ -87,16 +87,17 @@
       </div>
       @endforeach @else
       <p>You haven't made any comments yet</p>
-      @endif @if ($administrate_reviews && $administrate_comments)
-      <div class="right-container">
-        <a href="admin/reviews">
-          <h2>Administrate Reviews</h2>
-        </a>
-        <a href="admin/comments">
-          <h2>Administrate Comments</h2>
-        </a>
-      </div>
-      @endif
+      @endif 
     </div>
+    @if ($administrate_reviews && $administrate_comments)
+    <div class="right-container">
+      <a href="admin/reviews">
+        <h2>Administrate Reviews ({{$pending_reviews}})</h2>
+      </a>
+      <a href="admin/comments">
+        <h2>Administrate Comments({{$pending_comments}})</h2>
+      </a>
+    </div>
+    @endif
   </div>
 @endsection

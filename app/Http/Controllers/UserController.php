@@ -31,6 +31,14 @@ class UserController extends Controller
             return Comment::where('user_id', $user_id)->get();
         });
 
+        if($browse_reviews) {
+            $pending_review_count = sizeof(Review::where('approved', 0)->get());
+            $pending_comment_count = sizeof(Comment::where('approved', 0)->get());
+        } else {
+            $pending_review_count = null;
+            $pending_comment_count = null;
+        }
+
         return view('users.dashboard', [
             'user_id' => $user_id,
             'user_name' => $user_name,
@@ -38,7 +46,9 @@ class UserController extends Controller
             'reviews' => $reviews,
             'comments' => $comments,
             'administrate_reviews' => $browse_reviews,
-            'administrate_comments' => $browse_comments
+            'administrate_comments' => $browse_comments,
+            'pending_reviews' => $pending_review_count,
+            'pending_comments' => $pending_comment_count
         ]);
     }
 

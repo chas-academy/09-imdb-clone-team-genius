@@ -23,7 +23,7 @@ class LoginTest extends TestCase
 
     public function testUsersRedirect()
     {
-        $response = $this->get('/users');
+        $response = $this->get('/dashboard');
 
         $response->assertRedirect('/login');
     }
@@ -41,13 +41,13 @@ class LoginTest extends TestCase
             'role_id' => 1
         ]);
 
-        $this->actingAs($user)->get('/users')->assertSeeText('Administrate Reviews');
+        $this->actingAs($user)->get('/dashboard')->assertSeeText('Administrate Reviews');
     }
 
     public function testDashboardAsUser()
     {
         $user = factory(User::class)->make();
 
-        $this->actingAs($user)->get('/users')->assertOk();
+        $this->actingAs($user)->get('/dashboard')->assertOk();
     }
 }
