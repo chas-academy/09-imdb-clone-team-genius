@@ -51,13 +51,6 @@ class IndexController extends Controller
         ]);
     }
 
-    /* Delete this when we go live */
-    public function clearCache()
-    {
-        Cache::flush();
-        return redirect()->back();
-    }
-
     public function showTopComedyMovies(Client $client)
     {
         $current_year = date("Y");
