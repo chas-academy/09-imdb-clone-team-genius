@@ -23,8 +23,10 @@ Route::get('/search', 'SearchController@search')->name('search.search');
 Route::get('/advanced-search', 'SearchController@advancedSearch')->name('search.advanced');
 Route::get('/advanced-search-view', 'SearchController@view')->name('search.advnacedview');
 
+// User routes
+Route::get('dashboard', 'UserController@index')->middleware('auth');
+
 // Resource routes
-Route::resource('users', 'UserController')->middleware('auth');
 Route::resource('movies', 'MovieController')->except([
     'create', 'store', 'edit', 'update', 'destroy'
 ]);
