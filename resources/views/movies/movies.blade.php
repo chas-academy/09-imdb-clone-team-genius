@@ -1,7 +1,11 @@
 @extends('layouts.master')
 
 @section('content')
-<h2 class="text-center bg-light my-2">Results for "{{$query}}"</h2>
+@isset($query)
+  <h2 class="text-center bg-light my-2">Results for "{{$query}}"</h2>
+  @else 
+  <h2 class="text-center bg-light my-2">Results</h2>
+@endisset
   <ul>
     @foreach ($results as $match)
     	<li>
