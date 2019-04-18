@@ -130,11 +130,11 @@
             <input type="hidden" name="movie_title" value="{{$movie->title}}">
             <div class="row my-2">
               <label class="px-2" for="headline">Headline</label>
-              <input type="text" class="form-control mx-3" name="headline" placeholder="Enter headline" required/>
+              <input type="text" class="form-control mx-3" name="headline" placeholder="Enter headline" required minlength="3" maxlength="50"/>
             </div>
             <div class="row my-2">
               <label class="px-2" for="headline">Content</label>
-              <textarea name="content" class="form-control mx-3" rows="5" placeholder="Enter content" required></textarea>
+              <textarea name="content" class="form-control mx-3" rows="5" placeholder="Enter content" required required minlength="150" maxlength="3000"></textarea>
             </div>
             <select class="form-control mx-auto" name="rating" required>
                   <option selected disabled>Rate the movie</option>
@@ -171,11 +171,11 @@
               <input type="hidden" name="movie_title" value="{{$movie->title}}">
               <div class="row my-2">
                 <label class="px-2" for="headline">Headline</label>
-                <input type="text" class="form-control mx-3" name="headline" value="{{$review->headline}}" required/>
+                <input type="text" class="form-control mx-3" name="headline" value="{{$review->headline}}" required minlength="3" maxlength="50"/>
               </div>
               <div class="row my-2">
                 <label class="px-2" for="headline">Content</label>
-                <textarea name="content" class="form-control mx-3" rows="5" value="{{$review->content}}" required>{{$review->content}}</textarea>
+                <textarea name="content" class="form-control mx-3" rows="5" value="{{$review->content}}" required  minlength="150" maxlength="3000">{{$review->content}}</textarea>
               </div>
               <select class="form-control mx-auto" name="rating" required>
                     <option selected disabled>New Rating</option>
@@ -232,7 +232,7 @@
                   @csrf @method('PATCH')
                   <input type="hidden" name="comment_id" value="{{$comment->id}}">
                   <div class="row my-2 p-2">
-                    <input type="text" name="content" class="form-control mx-3" value="{{$comment->content}}" required/>
+                    <input type="text" name="content" class="form-control mx-3" value="{{$comment->content}}"  minlength="3" maxlength="300" required/>
                   </div>
                   <button class="btn btn-danger my-2 ml-1" type="submit">Edit Comment</button>
                   <button class="btn btn-warning my-2 edit-comment-cancel" type="button">Cancel</button>
@@ -274,7 +274,7 @@
                 <input type="hidden" name="movie_tmdb_id" value="{{$movie->id}}">
                 <input type="hidden" name="review_id" value="{{$review->id}}">
                 <div class="row my-2 p-2">
-                  <input type="text" name="content" class="form-control mx-3" placeholder="Enter content" required/>
+                  <input type="text" name="content" class="form-control mx-3" placeholder="Enter content" required  minlength="3" maxlength="300"/>
                 </div>
                 <button class="btn btn-danger my-2 mx-3" type="submit">Submit</button>
               </form>
