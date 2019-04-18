@@ -11,6 +11,9 @@
 |
 */
 
+// SitemapController
+Route::get('/sitemap', 'SitemapController@index');
+
 // Index controller routes
 Route::get('/', 'IndexController@index')->name('home.index');
 Route::get('/popular-this-year', 'IndexController@showMostPopularOfTheYear')->name('home.most-popular');
