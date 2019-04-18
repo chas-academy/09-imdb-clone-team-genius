@@ -43,11 +43,11 @@
       <input type="hidden" name="movie_title" value="{{$movie->title}}">
       <div class="row my-2">
         <label class="px-2" for="headline">Headline</label>
-        <input type="text" class="form-control mx-3" name="headline" value="{{$review->headline}}" required/>
+        <input type="text" class="form-control mx-3" name="headline" value="{{$review->headline}}" required minlength="3" maxlength="50"/>
       </div>
       <div class="row my-2">
         <label class="px-2" for="headline">Content</label>
-        <textarea name="content" class="form-control mx-3" rows="5" value="{{$review->content}}" required>{{$review->content}}</textarea>
+        <textarea name="content" class="form-control mx-3" rows="5" value="{{$review->content}}" required  minlength="150" maxlength="3000">{{$review->content}}</textarea>
       </div>
       <select class="form-control mx-auto" name="rating" required>
               <option selected disabled>New Rating</option>
