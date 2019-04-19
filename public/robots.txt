@@ -1,2 +1,3 @@
 User-agent: *
+sitemap: http://bmd.bellinder.se/sitemap.xml
 Disallow:
