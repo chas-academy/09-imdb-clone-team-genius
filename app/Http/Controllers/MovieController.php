@@ -67,10 +67,13 @@ class MovieController extends Controller
         $teasers_array = array();
         
         for ($i = 0; $i < 6; $i++) {
-            array_push($cast_array, $movie->credits->cast[$i]);
-            array_push($crew_array, $movie->credits->crew[$i]);
+            if (sizeof($movie->credits->cast) > $i) {
+                array_push($cast_array, $movie->credits->cast[$i]);
+            }
+            if (sizeof($movie->credits->crew) > $i) {
+                array_push($crew_array, $movie->credits->crew[$i]);
+            }
         }
-
         if ($movie->videos->results) {
             foreach ($movie->videos as $result) {
                 foreach ($result as $video) {
