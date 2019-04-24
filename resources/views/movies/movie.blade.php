@@ -69,6 +69,7 @@
       </div>
     </div>
 
+    @if ($trailers)
     <div class="videos">
       @foreach ($trailers as $trailer)
       <h5 class="text-center">{{$trailer->name}}</h5>
@@ -79,6 +80,7 @@
       </div>
       @endforeach
     </div>
+    @endif
   </div>
 
   <!-- CAST AND CREW -->
