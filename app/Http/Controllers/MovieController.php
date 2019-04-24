@@ -77,7 +77,7 @@ class MovieController extends Controller
         if ($movie->videos->results) {
             foreach ($movie->videos as $result) {
                 foreach ($result as $video) {
-                    if ($video->site == "YouTube" && $video->type == "Trailer") {
+                    if ($video->site == "YouTube" && $video->type == "Trailer" && count($trailers_array) < 3) {
                         array_push($trailers_array, $video);
                     }
                 }
